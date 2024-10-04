@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import config from '../../config';
 
 function ApiCalls() {
   const [items, setItems] = useState([]); 
@@ -7,12 +8,13 @@ function ApiCalls() {
 
   const fetchItems = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/items"); 
+      const response = await fetch(`${config.apiUrl}/api/items`); 
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
       const data = await response.json();
       setItems(data); 
+      console.log(data);
     } catch (error) {
       setError(error.message);
     }
@@ -28,7 +30,7 @@ function ApiCalls() {
     e.preventDefault(); 
 
     try {
-      const response = await fetch("http://localhost:5000/api/items", { 
+      const response = await fetch(`${config.apiUrl}/api/items`, { 
         method: "POST",
         headers: {
           "Content-Type": "application/json",
