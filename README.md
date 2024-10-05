@@ -26,5 +26,5 @@ Follow these steps if you are new to working with React Projects.
  - Open a new terminal in `MERN-Templates` and then navigate to the server folder : `cd server` 
  - Install dependencies : `npm i`
  - Start the server : `node server.js`
+ - Make sure to read the contribution guidelines in `Contributing.md`
  - You can start contributing now !
-```
