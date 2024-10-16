@@ -1,7 +1,7 @@
-import ApiCalls from './template/backend/ApiCalls'
-import HelloWorld from './template/frontend/HelloWorld'
+import ApiCalls from './template/apicall/ApiCalls'
+import HelloWorld from './template/design/HelloWorld'
 
-export const backenddata = [
+export const apicalldata = [
     {
         id:'1',
         title: "API Calls",
@@ -11,7 +11,7 @@ export const backenddata = [
     }
 ];
 
-export const frontenddata = [
+export const designdata = [
     {
         id:'1',
         title: "Hello World",

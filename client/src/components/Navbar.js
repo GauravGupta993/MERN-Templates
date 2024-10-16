@@ -40,7 +40,7 @@ function ColorSchemesExample() {
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
-                to="/backend" 
+                to="/apicall" 
                 style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -48,11 +48,11 @@ function ColorSchemesExample() {
                   margin: '0 10px' 
                 }}
               >
-                <FaServer style={{ fontSize: getIconSize('/backend') }} /> Backend Templates
+                <FaServer style={{ fontSize: getIconSize('/apicall') }} /> API Call Templates
               </Nav.Link>
               <Nav.Link 
                 as={Link} 
-                to="/frontend" 
+                to="/design" 
                 style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
@@ -60,7 +60,7 @@ function ColorSchemesExample() {
                   margin: '0 10px' 
                 }}
               >
-                <FaCode style={{ fontSize: getIconSize('/frontend') }} /> Frontend Templates
+                <FaCode style={{ fontSize: getIconSize('/design') }} /> Design Templates
               </Nav.Link>
             </Nav>
           </div>

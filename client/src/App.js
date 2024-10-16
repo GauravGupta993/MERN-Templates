@@ -1,11 +1,11 @@
 // src/App.js
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import necessary components from react-router-dom
-import Frontend from "./components/frontendTemplate";
-import Backend from "./components/backendTemplate";
+import Frontend from "./components/designTemplate";
+import Backend from "./components/apicallTemplate";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import { frontenddata, backenddata } from "./data";
+import { designdata, apicalldata } from "./data";
 
 function App() {
   return (
@@ -13,19 +13,19 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-        <Route exact path="/frontend" element={<Frontend />} />
+        <Route exact path="/design" element={<Frontend />} />
                 {
-                    frontenddata.map(data => {
+                    designdata.map(data => {
                         return (
-                            <Route exact path={`/frontend/${data.urlTerm}`} element={data.element} />
+                            <Route exact path={`/design/${data.urlTerm}`} element={data.element} />
                         )
                     })
                 }
-                <Route exact path="/backend" element={<Backend />} />
+                <Route exact path="/apicall" element={<Backend />} />
                 {
-                    backenddata.map(data => {
+                    apicalldata.map(data => {
                         return (
-                            <Route exact path={`/backend/${data.urlTerm}`} element={data.element} />
+                            <Route exact path={`/apicall/${data.urlTerm}`} element={data.element} />
                         )
                     })
                 }

@@ -4,28 +4,28 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { Container, Row } from "react-bootstrap";
 import CardComponent from "./cardComponent";
-import { frontenddata, backenddata } from "../data";
+import { apicalldata, designdata } from "../data";
 
 function Home() {
   return (
     <div className="App">
       <Container className="gap-5">
         <Row>
-          <Link to="/frontend">
+          <Link to="/design">
             <Button
               variant="primary"
               size="lg"
               style={{ fontSize: "40px", width: "100%" }}
             >
-              Frontend Templates
+              Design Templates
             </Button>
           </Link>
         </Row>
         <Container className="mt-4">
           <Row>
-            {frontenddata.map((card) => (
+            {designdata.map((card) => (
               <Link
-                to={`/frontend/${card.urlTerm}`}
+                to={`/design/${card.urlTerm}`}
                 style={{ textDecoration: "none" }}
                 key={card.id}
               >
@@ -35,21 +35,21 @@ function Home() {
           </Row>
         </Container>
         <Row>
-          <Link to="/backend">
+          <Link to="/apicall">
             <Button
               variant="primary"
               size="lg"
               style={{ fontSize: "40px", width: "100%" }}
             >
-              Backend Templates
+              API Calls Templates
             </Button>
           </Link>
         </Row>
         <Container className="mt-4">
           <Row>
-            {backenddata.map((card) => (
+            {apicalldata.map((card) => (
               <Link
-                to={`/backend/${card.urlTerm}`}
+                to={`/apicall/${card.urlTerm}`}
                 style={{ textDecoration: "none" }}
                 key={card.id}
               >

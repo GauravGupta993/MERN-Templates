@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { frontenddata } from "../data";
+import { designdata } from "../data";
 import {Link } from "react-router-dom";
 import CardComponent from './cardComponent';
 
-function frontendTemplate() {
+function designTemplate() {
 
   return (
     <Container className="mt-4">
       <Row >
-        {frontenddata.map((card) => (
+        {designdata.map((card) => (
           <Col md={4} sm={12} >
-          <Link to={`/frontend/${card.urlTerm}`} key={card.id} style={{textDecoration:'none'}}>
+          <Link to={`/design/${card.urlTerm}`} key={card.id} style={{textDecoration:'none'}}>
           <CardComponent title={card.title} text={card.description}  />
           </Link>
           </Col>
@@ -21,4 +21,4 @@ function frontendTemplate() {
   );
 }
 
-export default frontendTemplate;
+export default designTemplate;
