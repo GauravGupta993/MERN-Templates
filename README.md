@@ -7,11 +7,12 @@ This repository consists of all the frequently used frontend and backend templat
 
  - Client - contains the entire code for the UI.
  -  `/client/src/template` : this is where the contributors can create all their templates.
- - `/client/src/template/frontend` : this will contain the UI of the whatever template you are contributing (for example, the UI of a chat app).
- - `/client/src/template/backend` :  this will contain all the code written to import various stuff from backend/server api keys and some page routes and other stuff that you may use.
+ - `/client/src/template/design` : this will contain the UI of the whatever template you are contributing (for example, the UI of a chat app).
+ - `/client/src/template/apicall` :  this will contain all the code written to get various stuff by using API calls and some very basic page design to check the functionality of your backend code.
  - `/client/src/data.js` - after creating your template, make sure to import it here.
  - Server : contains entire backend logic, database connections (MongoDB in this case) and various other stuff.
- - `/server/routes` - add all the api routes (as for example login,signup etc) here, which other contributors (or maybe you) might use while creating the frontend of the templates.
+ - `/server/routes` - add all the api routes here, which other contributors (or maybe you) might use.
+ - `/server/models` - add all the MongoDB models here.
  
 ## Getting started with the project
 
