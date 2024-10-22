@@ -1,4 +1,5 @@
 import ApiCalls from './template/apicall/ApiCalls'
+import CurrencyConverter from './template/design/CurrencyConverter';
 import HelloWorld from './template/design/HelloWorld'
 
 export const apicalldata = [
@@ -18,5 +19,12 @@ export const designdata = [
         description: "Basic Frontend Template",
         urlTerm: "HelloWorld",
         element: <HelloWorld/>
+    },
+    {
+        id: '2',  
+        title: "Currency Converter",
+        description: "Real-time currency conversion",
+        urlTerm: "CurrencyConverter",
+        element: <CurrencyConverter/>  
     }
 ];
