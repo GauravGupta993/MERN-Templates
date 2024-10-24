@@ -1,75 +1,69 @@
-import React from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { FaHome, FaServer, FaCode } from 'react-icons/fa';
+import React from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Navbar, Container, Nav } from "react-bootstrap";
+import { FaHome, FaServer, FaPalette } from "react-icons/fa";
 
-function ColorSchemesExample() {
+const ImprovedNavbar = () => {
   const location = useLocation();
 
-  const getIconSize = (path) => {
-    return location.pathname === path ? '40px' : '20px';
-  };
+  const links = [
+    { path: "/", icon: FaHome, label: "Home" },
+    { path: "/apicall", icon: FaServer, label: "API Templates" },
+    { path: "/design", icon: FaPalette, label: "Design Templates" },
+  ];
 
   return (
-    <>
-      <Navbar style={{ backgroundColor: 'transparent' }} expand="lg"> 
-        <Container className="d-flex justify-content-center">
-          <div 
-            style={{ 
-              backgroundColor: 'blue', 
-              padding: '10px', 
-              borderRadius: '5px', 
-              display: 'flex', 
-              justifyContent: 'center' 
-            }}
-          >
-            <Nav>
-              <Nav.Link 
-                as={Link} 
-                to="/" 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  color: 'white', 
-                  margin: '0 10px' 
+    <Navbar 
+      bg="white" 
+      fixed="top" 
+      className="shadow-sm"
+      style={{
+        backdropFilter: "blur(8px)",
+        backgroundColor: "rgba(255, 255, 255, 0.9)"
+      }}
+    >
+      <Container>
+        <Nav className="mx-auto">
+          {links.map(({ path, icon: Icon, label }) => {
+            const isActive = location.pathname === path;
+            return (
+              <Nav.Link
+                key={path}
+                as={Link}
+                to={path}
+                className="d-flex align-items-center px-4 position-relative"
+                style={{
+                  color: isActive ? "#2563eb" : "#64748b",
+                  transition: "all 0.3s ease"
                 }}
               >
-                <FaHome style={{ fontSize: getIconSize('/') }} /> Home
+                <Icon 
+                  size={isActive ? 24 : 20} 
+                  style={{ 
+                    marginRight: "0.5rem",
+                    transition: "all 0.3s ease"
+                  }}
+                />
+                {label}
+                {isActive && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      height: "2px",
+                      backgroundColor: "#2563eb"
+                    }}
+                  />
+                )}
               </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/apicall" 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  color: 'white', 
-                  margin: '0 10px' 
-                }}
-              >
-                <FaServer style={{ fontSize: getIconSize('/apicall') }} /> API Call Templates
-              </Nav.Link>
-              <Nav.Link 
-                as={Link} 
-                to="/design" 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  color: 'white', 
-                  margin: '0 10px' 
-                }}
-              >
-                <FaCode style={{ fontSize: getIconSize('/design') }} /> Design Templates
-              </Nav.Link>
-            </Nav>
-          </div>
-        </Container>
-      </Navbar>
-      
-      <br />
-    </>
+            );
+          })}
+        </Nav>
+      </Container>
+    </Navbar>
   );
-}
+};
 
-export default ColorSchemesExample;
+export default ImprovedNavbar;
